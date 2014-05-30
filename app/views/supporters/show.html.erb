@@ -1,0 +1,7 @@
+<h1> <%= @supporter.name %></h1>
+<p> <%=@supporter.email %> </p>
+<p> <%=@supporter.department %> </p>
+<p> <%=@supporter.message %> </p>
+
+<%= link_to "Edit", edit_supporter_path(@supporter) %>
+<%= link_to "Delete", @support, method: :delete, data: {confirm: "Are you sure?"} %>

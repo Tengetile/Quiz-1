@@ -1,0 +1,31 @@
+<h2> Support Requests </h2>
+<br>
+
+<table class="table table-bordered">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Message</th>
+      <th>Action</th>
+    </tr>
+
+    <% @supporters.each do |supporter|%>
+    <tr>
+      <td><%= supporter.name %></td>
+      <td><%= supporter.email%></td>
+      <td><%= supporter.department%></td>
+      <td><%= supporter.message%></td>
+      <td>
+        <%= link_to "Edit", edit_supporter_path(supporter),class: "btn btn-primary"%>
+         <%= link_to "Delete",supporter_path(supporter),class: "btn btn-primary"%>
+      </td>
+
+         </tr>
+    <%end%>
+</table>
+
+<div>
+<%= link_to " Create New Supporter", new_supporter_path, class: "btn btn-primary" %> 
+</div>
+<br>

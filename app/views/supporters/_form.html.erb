@@ -1,0 +1,42 @@
+<% if @supporter.errors.any? %>
+
+  <ul>
+    <% @supporter.errors.full_messages.each do |error| %>
+      <li>  <%= error %> </li>
+      <%end%>
+  </ul>
+
+<% end %>
+
+<%= form_for @supporter do |f| %>
+
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</div>
+
+<div class="form-group">
+  <%= f.radio_button :department, 'sales' %> 
+  <%= label :contactmethod_sales, 'Sales'%>
+  <%= f.radio_button :department, 'marketing' %>
+  <%= label :contactmethod_marketing, 'Marketing' %>
+  <%= f.radio_button :department, 'technical' %>
+  <%= label :contactmethod_technical, 'Technical' %>
+</div>
+  
+ <div class="form-group">
+  <%= f.label :message %>
+  <%= f.text_area :message %>
+</div>
+  
+<div>
+   <%= f.submit class: "btn btn-primary" %>
+
+</div>
+
+<% end %>
